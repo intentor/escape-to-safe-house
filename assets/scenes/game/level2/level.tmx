@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="20" tilewidth="64" tileheight="64">
+ <tileset firstgid="1" name="level" tilewidth="64" tileheight="64">
+  <image source="level.png" trans="ffffff"/>
+  <tile id="0">
+   <properties>
+    <property name="blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="begin" value="true"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="end" value="true"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="enemy" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Entities" width="100" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3WwQoAEBAFQAf8/yc7KrXipM3MkXd4rdqUAgAAU39d4FPmDgD/8g+ImQ1ZtNcFsC+SqIe5jO9503mXje7W89MccG8AZKg6EkAfAAA=
+  </data>
+ </layer>
+ <layer name="Scenario" width="100" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3W0QqAIAyFYan3f+cuKhhyNkemBf4feFNe6A5blQIAAAAAiGzVwhxR3fdrYS6v7uQxnuqFTB7MrnHq2mf7g17p430byOM7qta9edQ5rzzH1N2j2ozIw9u7ClvjqHZFvCOP05s9bOtCHjlqXkRnbM1dryfII8c7Y+sfx/u/9zL4Ux72zOquT5b1dJ+64/3sAP6VVuVAHwAA
+  </data>
+ </layer>
+ <layer name="Collisions" width="100" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3V2wqAIAwAUPv/n+4xkDJT8noO7G0Ibs6FAAAAjOaIgjbUHS6ls2CGWI3dsIe4zzv3++7uatOWGtfxTvv7+l+85ernP3L7NONMPe31msg9P5XHPE4jpDZkQB8AAA==
+  </data>
+ </layer>
+</map>

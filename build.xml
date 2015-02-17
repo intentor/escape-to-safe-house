@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<project default="dist" basedir="." name="EscapeTSafeHouse">
+	<description>
+		Escape to Safe House Builder
+    </description>	
+	
+	<property name="build" location="dist/build"/>
+	<property name="dist"  location="dist"/>
+	
+	<target name="init">
+		<delete dir="${dist}"/>
+		<mkdir dir="${dist}"/>
+		<mkdir dir="${build}"/>
+	</target>  
+	
+	<target name="compile" depends="init">
+		<javac srcdir="src" 
+			destdir="${build}"
+			classpath="lib/jinput.jar;lib/jogg-0.0.7.jar;lib/jorbis-0.0.15.jar;lib/lwjgl.jar;lib/slick.jar"/>
+	</target>
+
+	<target name="dist" depends="compile" description="Gera o pacote de distribuiÃ§Ã£o.">
+		<jar jarfile="${dist}/escape.jar" 
+			basedir="${build}">
+			<manifest>
+				<!-- Informações do jogo -->
+				<attribute name="Built-By" value="Intentor"/>
+				<attribute name="Implementation-Vendor" value="ASTIRINA"/>
+				<attribute name="Implementation-Title" value="Escape to Safe House"/>
+				<attribute name="Implementation-Version" value="1.0.0beta"/>
+				<!-- Informações de execução -->
+				<attribute name="Main-Class" value="scenes.Loader"/>
+				<attribute name="Class-Path" value="lib/jinput.jar lib/jogg-0.0.7.jar lib/jorbis-0.0.15.jar lib/lwjgl.jar lib/slick.jar"/>
+            </manifest>
+            <zipfileset dir="." includes="assets/**" excludes="**/.svn"/>
+		</jar>
+		<copy todir="${dist}/lib">
+			<fileset dir="lib" excludes="**/.svn"/>
+		</copy>
+		<copy todir="${dist}/native">
+			<fileset dir="native" excludes="**/.svn"/>
+		</copy>
+		<copy todir="${dist}">
+			<fileset dir="support/run" excludes="**/.svn"/>
+		</copy>
+		<delete dir="${build}"/>
+	</target>
+</project>
